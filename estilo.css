@@ -1,0 +1,1196 @@
+:root {
+    --azul-oscuro: #050a30; /* El fondo profundo */
+    --azul-electrico: #1b33f3; /* El color de los botones */
+    --azul-claro: #4db8ff; /* Para los degradados de texto */
+    --blanco: #ffffff;
+    --azul-suave: #dce9ff;        /* fondos claros */
+    --blanco-azulado: #f5f9ff;   /* secciones claras */
+    --violeta-acento: #7a5cff;   /* contraste premium */
+    --sombra-azul: rgba(77,146,255,0.15);
+
+
+}
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    /* Un degradado que va desde un azul eléctrico en el centro a un azul casi negro en las esquinas */
+    background: radial-gradient(circle at center, #0a1970 0%, #050a30 70%, #02051a 100%);
+    background-attachment: fixed; /* Mantiene el fondo quieto mientras haces scroll */
+    min-height: 100vh;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Glass effect */
+    background: rgba(10, 25, 60, 0.147); /* azul oscuro translúcido */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Borde sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Sombra suave (profundidad) */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    /* Transición para efectos futuros */
+    transition: all 0.3s ease;
+}
+
+
+
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 10px 5% 0 5%;
+    
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 75px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+
+
+.menu ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    color: var(--blanco);
+   
+}
+
+.menu ul li a:hover {
+    color: #4db8ff
+}
+
+.logo {
+    display: block;
+    margin-right: 70px;
+    width: auto ;
+    height: 110px ;
+   
+}
+
+/* 2. HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 130px 8% 80px 8%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-img img{
+
+    width: 320px;
+    height: auto;
+
+}
+
+.hero-img {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ajusta según el tamaño que desees */
+    height: 500px;    /* Ajusta según el diseño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* El efecto de degradado en el texto */
+.hero h1 span {
+    display: block;
+    background: linear-gradient(90deg, #4db8ff, #1b33f3);
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+
+/* Añadimos un resplandor extra detrás del logo grande de IP */
+.hero-img::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(64, 64, 167, 0.793); /* Azul suave */
+    filter: blur(100px); /* Difumina el círculo para que parezca luz */
+    z-index: -1; /* Que se quede detrás de la imagen de IP */
+}
+
+
+/* BOTÓN */
+.btn-prim {
+    background-color: var(--azul-electrico);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(27, 51, 243, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn-prim:hover {
+    transform: translateY(-2px);
+}
+
+/* 3. LOGO IP DERECHO */
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-img img {
+    max-width: 400px;
+    /* Efecto de resplandor sutil como en la imagen */
+    filter: drop-shadow(0 0 30px rgba(77, 184, 255, 0.3));
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Para que se vea tu degradado azul */
+    z-index: -1; /* Lo manda al fondo */
+    top: 0;
+    left: 0;
+}
+
+/* ========================= */
+/* SECCIÓN SERVICIO */
+/* ========================= */
+
+/* Contenedor principal de la sección */
+.contenedor-servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.seccion-servicios {
+    background-color: #ffffff;
+    padding: 120px 0;
+    width: 100%;
+}
+
+/* Fila que organiza las tarjetas */
+.fila-tarjetas {
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Para que sea responsivo en móviles */
+}
+
+/* Estilo de cada tarjeta individual */
+.tarjeta-blanca {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 30px 20px;
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta-blanca:hover {
+    transform: translateY(-10px);
+}
+
+/* Contenedor de los iconos */
+.icono-contenedor {
+    margin-bottom: 15px;
+}
+
+
+/* Texto dentro de las tarjetas */
+.tarjeta-blanca p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo para los iconos de la librería */
+.icono-contenedor i {
+    font-size: 32px;
+    color: #4da6ff; /* Color azul claro del diseño */
+    margin-bottom: 15px;
+}
+
+.tarjeta-blanca p {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-servicios-rapidos {
+        margin-top: 20px; /* En móvil es mejor que no floten tanto */
+    }
+    
+    .tarjeta-blanca {
+        min-width: 100%; /* Una tarjeta por fila en móviles */
+    }
+}
+
+/* ========================= */
+/* SECCIÓN NOSOTROS */
+/* ========================= */
+
+.seccion-nosotros{
+    padding: 120px 8%;
+     background:
+    linear-gradient(
+        rgba(5,10,48,0.75),
+        rgba(5,10,48,0.75)
+    ),
+    url('img/img_seccion_nosotros.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+
+.contenedor-nosotros{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 70px;
+    align-items: center;
+}
+
+.etiqueta-seccion{
+    color: var(--azul-claro);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.texto-nosotros h2{
+    font-size: 58px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.texto-nosotros h2 span{
+    color: var(--azul-claro);
+}
+
+.texto-nosotros p{
+    color: rgba(255,255,255,0.8);
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.imagen-nosotros img{
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+
+/* BOTÓN */
+
+.boton-principal{
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    border-radius: 40px;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul-electrico),
+        var(--azul-claro)
+    );
+
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.boton-principal:hover{
+    transform: translateY(-5px);
+
+    box-shadow:
+    0 10px 30px rgba(77,184,255,0.3);
+}
+
+/* =========================
+SECTION: Ecosistema 
+========================= */
+
+.ecosistema-conecta{
+    position: relative;
+    padding: 120px 20px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+
+/* Fondo tipo red */
+
+
+.ecosistema-overlay {
+
+    position: absolute;
+    inset: 0;
+
+    background:
+
+
+        /* Luz azul principal */
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(77,146,255,0.20),
+            transparent 45%
+        ),
+
+        /* Toque violeta suave */
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(122,92,255,0.12),
+            transparent 50%
+        ),
+
+
+        /* Base CLARA (la clave del cambio) */
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #eef4ff 100%
+        ),
+
+        /* Red de fondo (muy sutil) */
+        url("img/img...");
+
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 1;
+    z-index: 1;
+}
+
+.ecosistema-overlay::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at center,
+        transparent 45%,
+        rgba(5, 10, 48, 0.05) 100%
+    );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ecosistema-container{
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* TEXTO */
+
+.ecosistema-info{
+    max-width: 650px;
+    margin-bottom: 70px;
+    
+}
+
+.ecosistema-info h2{
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+}
+
+.ecosistema-info h2 span{
+    display: block;
+    color: var(--azul-electrico);
+}
+
+.ecosistema-info p{
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 600px;
+    color: rgba(4, 11, 75, 0.88);
+}
+
+/* GRID ECOSISTEMA */
+
+.ecosistema-grid{
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+}
+
+
+/* Logo central */
+.ecosistema-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background: radial-gradient(
+        circle,
+        rgba(27,51,243,0.25) 0%,
+        rgba(77,146,255,0.18) 40%,
+        rgba(255,255,255,0.6) 100%
+    );
+
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 0 45px rgba(77,146,255,0.22),
+        0 0 120px rgba(77,146,255,0.15);
+
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.ecosistema-center img{
+    width: 220px;
+    object-fit: contain;
+}
+
+/* Cards */
+.ecosistema-card{
+    position: absolute;
+
+    width: 180px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.18),
+        inset 0 1px 1px rgba(255,255,255,.08);
+
+    transition: all .35s ease;
+}
+
+.ecosistema-card:hover{
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.28),
+        0 0 25px rgba(77,146,255,.25);
+}
+
+.ecosistema-card img{
+    width: 75%;
+    object-fit: contain;
+}
+
+/* Posiciones */
+.card-top-left{
+    top: 20px;
+    left: 12%;
+}
+
+.card-top-right{
+    top: 20px;
+    right: 12%;
+}
+
+.card-bottom-left{
+    bottom: 120px;
+    left: 10%;
+}
+
+.card-bottom-right{
+    bottom: 120px;
+    right: 10%;
+}
+
+.card-bottom-center{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ecosistema-lines{
+    position: absolute;
+    inset: 0;
+
+    background: url("conexion/conexion.xml") center/contain no-repeat;
+
+    opacity: .3;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* =========================
+ANIMACIONES
+========================= */
+
+@keyframes pulse{
+    0%{
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50%{
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+
+    100%{
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width: 992px){
+
+    .ecosistema-grid{
+        min-height: 850px;
+    }
+
+    .ecosistema-center{
+        width: 220px;
+        height: 220px;
+    }
+
+    .ecosistema-card{
+        width: 160px;
+        height: 110px;
+    }
+
+    .card-top-left{
+        left: 0;
+    }
+
+    .card-top-right{
+        right: 0;
+    }
+
+    .card-bottom-left{
+        left: 0;
+    }
+
+    .card-bottom-right{
+        right: 0;
+    }
+}
+
+@media(max-width: 768px){
+
+    .ecosistema-conecta{
+        padding: 90px 20px;
+    }
+
+    .ecosistema-info{
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .ecosistema-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        min-height: auto;
+    }
+
+    .ecosistema-center,
+    .ecosistema-card{
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        transform: none;
+    }
+
+    .ecosistema-center{
+        order: -1;
+        margin-bottom: 15px;
+    }
+
+    .card-bottom-center{
+        transform: none;
+    }
+}
+
+ /* FOOTER */
+
+
+    footer{
+      background: linear-gradient(180deg,#07122f,#0b1c54);
+      color:white;
+      padding-top:50px;
+    }
+
+    .footer-container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .logo-ipinnovation {
+        width: 180px;
+        height: auto;
+    }
+
+    /* TOP */
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      flex-wrap:wrap;
+      padding-bottom:40px;
+    }
+
+    .footer-brand{
+      flex:1;
+      min-width:250px;
+    }
+
+    .footer-brand h2{
+      font-size:42px;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .footer-brand span{
+      color:#4cc3ff;
+    }
+
+    .footer-brand p{
+      color:#b9c5e4;
+      margin-top:8px;
+      line-height:1.6;
+    }
+
+    /* LINKS */
+    .footer-links{
+      flex:1;
+      min-width:220px;
+    }
+
+    .footer-links h3,
+    .footer-contact h3,
+    .footer-social h3{
+      font-size:18px;
+      margin-bottom:18px;
+    }
+
+    .footer-links ul{
+      list-style:none;
+    }
+
+    .footer-links ul li{
+      margin-bottom:12px;
+    }
+
+    .footer-links ul li a{
+      text-decoration:none;
+      color:#6fd3ff;
+      transition:0.3s;
+    }
+
+    .footer-links ul li a:hover{
+      color:white;
+    }
+
+    /* CONTACTO */
+    .footer-contact{
+      flex:1;
+      min-width:220px;
+    }
+
+    .footer-contact a{
+      color:#6fd3ff;
+      text-decoration:none;
+      font-size:16px;
+    }
+
+    /* REDES */
+    .footer-social{
+      flex:1;
+      min-width:150px;
+    }
+
+    .social-icons{
+      display:flex;
+      gap:15px;
+      margin-top:10px;
+    }
+
+    .social-icons a{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-size:18px;
+    }
+
+    .social-icons a:hover{
+      background:#00bfff;
+      transform:translateY(-3px);
+    }
+
+    /* BANNER */
+    .footer-banner{
+      background:white;
+      border-radius:8px;
+      padding:20px;
+      margin:20px 0 35px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .footer-banner img{
+      max-width:100%;
+      height:auto;
+    }
+
+    /* BOTTOM */
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding:20px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:15px;
+      font-size:14px;
+      color:#c9d4ef;
+    }
+
+    .footer-bottom a{
+      color:#6fd3ff;
+      text-decoration:none;
+    }
+
+    @media(max-width:768px){
+
+      .footer-top{
+        flex-direction:column;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .footer-brand h2{
+        font-size:34px;
+      }
+    }
+
+    /* ========================= */
+/* RESPONSIVE GENERAL */
+/* ========================= */
+
+@media (max-width: 1024px) {
+
+  .menu {
+    padding: 10px 6%;
+  }
+
+  .menu ul {
+    gap: 35px;
+  }
+
+  .logo {
+    height: 85px;
+    margin-right: 30px;
+  }
+
+  .hero {
+    padding: 130px 6% 70px;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-img img {
+    max-width: 330px;
+  }
+
+  .contenedor-nosotros {
+    gap: 40px;
+  }
+
+  .texto-nosotros h2 {
+    font-size: 46px;
+  }
+}
+
+
+/* ========================= */
+/* TABLET Y MÓVIL */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    position: fixed;
+  }
+
+  .menu {
+    flex-direction: column;
+    padding: 12px 5%;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 70px;
+    margin-right: 0;
+  }
+
+  .menu ul {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .menu ul li a {
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 170px 6% 70px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-img {
+    height: auto;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .hero-img img {
+    max-width: 260px;
+    width: 80%;
+  }
+
+  .hero-img::before {
+    width: 260px;
+    height: 260px;
+    top: 10%;
+    right: auto;
+  }
+
+  .seccion-servicios {
+    padding: 80px 0;
+  }
+
+  .contenedor-servicios {
+    padding: 0 25px;
+  }
+
+  .fila-tarjetas {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .tarjeta-blanca {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .seccion-nosotros {
+    padding: 90px 6%;
+  }
+
+  .contenedor-nosotros {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .texto-nosotros h2 {
+    font-size: 2.4rem;
+  }
+
+  .texto-nosotros p {
+    font-size: 1rem;
+  }
+
+  .imagen-nosotros img {
+    border-radius: 20px;
+  }
+
+  .ecosistema-conecta {
+    padding: 80px 20px;
+  }
+
+  .ecosistema-info {
+    text-align: center;
+    margin: 0 auto 50px;
+  }
+
+  .ecosistema-info h2 {
+    font-size: 2.2rem;
+  }
+
+  .ecosistema-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .ecosistema-center,
+  .ecosistema-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .ecosistema-center {
+    width: 210px;
+    height: 210px;
+    order: -1;
+  }
+
+  .ecosistema-center img {
+    width: 180px;
+  }
+
+  .ecosistema-card {
+    width: 100%;
+    max-width: 300px;
+    height: 120px;
+  }
+
+  .card-bottom-center {
+    transform: none;
+  }
+
+  .ecosistema-lines {
+    display: none;
+  }
+
+  footer {
+    padding-top: 45px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+    min-width: 100%;
+  }
+
+  .logo-ipinnovation {
+    width: 160px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-banner {
+    padding: 12px;
+    margin: 10px 0 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+
+/* ========================= */
+/* MÓVILES PEQUEÑOS */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .menu ul {
+    gap: 12px;
+  }
+
+  .menu ul li a {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    height: 58px;
+  }
+
+  .hero {
+    padding-top: 150px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn-prim,
+  .boton-principal {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .hero-img img {
+    max-width: 220px;
+  }
+
+  .texto-nosotros h2 {
+    font-size: 2rem;
+  }
+
+  .ecosistema-info h2 {
+    font-size: 2rem;
+  }
+
+  .ecosistema-center {
+    width: 180px;
+    height: 180px;
+  }
+
+  .ecosistema-center img {
+    width: 150px;
+  }
+
+  .footer-container {
+    width: 92%;
+  }
+
+  .footer-banner img {
+    max-width: 100%;
+  }
+}
